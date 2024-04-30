@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+}
+
+header {
+    background: #2b2828;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+
+}
+
+header .logo {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li a {
+    display: inline-block;
+    color: white;
+    padding: 5px 0;
+    margin: 0 10px;
+    border: 3px solid transparent;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+
+header nav ul li button {
+    display: block;
+    color: white;
+    padding: 5px 0;
+    margin: 0 10px;
+    border: 3px solid transparent;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+
+header nav ul li button a:hover,
+header nav ul li a.active {
+    border-bottom-color: red;
+}
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: white;
+}
+
+body {
+    background: rgb(113, 115, 115);
+}
+
+h1 { text-align: center; }
+
+.dropzone {
+ 
+    border-radius: 5px;
+    border: 0.3rem dashed rgb(247, 16, 0);
+    border-image: none;
+    width: 41rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+}
+.logout-btn {
+    border: none;
+    background-color: rgb(255, 71, 71);
+    color: #fff;
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dz-details, .dz-size, .dz-filename, .dz-message, .note {
+   color: black;
+}
+
+.contendor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15rem;
+}
+
+.cont-drop{
+
+    height: 100%;
+    color: rgb(100, 108, 128);
+    line-height: 1.4rem;
+}
+
+.wrapper {
+    height: 715px;
+    width: 715px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+    margin-top: -8rem;
+}
+
+.wrapper h1 {
+    font-size: 22px;
+    font-weight: 600;
+    padding: 20px 30px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+}
+
+.wrapper form {
+    margin: 35px 30px;
+}
+
+.wrapper form.disabled {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+form .dbl-field {
+    margin-bottom: 25px;
+}
+
+.dbl-field .field {
+    height: 50px;
+    display: flex;
+    position: relative;
+
+}
+
+.wrapper form i {
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    color: #ccc;
+    font-size: 17px;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+form .field input {
+    width: 100rem;
+    height: 100%;
+    outline: none;
+    padding: 0 18px 0 48px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: black;
+}
+
+form .message textarea {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0 18px 0 48px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: black;
+}
+
+.field input::placeholder,
+.message textarea::placeholder {
+    color: #ccc;
+}
+
+.field input:focus,
+.message textarea:focus {
+    padding-left: 47px;
+    border: 2px solid rgb(255, 71, 71);
+}
+
+.field input:focus~i,
+.message textarea:focus~i {
+    color: black;
+}
+
+form .message {
+    position: relative;
+}
+
+form .message i {
+    top: 30px;
+    font-size: 20px;
+}
+
+form .message textarea {
+    min-height: 130px;
+    max-height: 150px;
+    max-width: 100%;
+    min-width: 100%;
+    padding: 15px 20px 0 48px;
+}
+
+form .message textarea::-webkit-scrollbar {
+    width: 0px;
+}
+
+.message textarea:focus {
+    padding-top: 14px;
+}
+
+form .button-area {
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-area button {
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 13px 25px;
+    font-weight:bold; color: #FFFFFF;
+    background-color: rgb(255, 71, 71);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 71, 71)), to(rgb(255, 71, 71)));
+    transition: 0.3s ease;
+    margin-top: 8rem;
+}
+
+.button-area button:hover {
+     background-color: rgb(255, 71, 71); background-image: -webkit-gradient(linear, left top, left bottom, from(#ec1a1a), to(rgba(131, 12, 12, 0.22)));
+}
+
+.button-area span {
+    font-size: 17px;
+    margin-left: 30px;
+    display: none;
+}
+
+
+
+
+@media (max-width: 600px) {
+    .wrapper h1 {
+        text-align: center;
+    }
+
+    .wrapper form {
+        margin: 35px 20px;
+    }
+
+    form .dbl-field {
+        flex-direction: column;
+        margin-bottom: 0px;
+    }
+
+    form .dbl-field .field {
+        width: 100%;
+        height: 45px;
+        margin-bottom: 20px;
+    }
+
+    form .message textarea {
+        resize: none;
+    }
+
+    form .button-area {
+        margin-top: 20px;
+        flex-direction: column;
+    }
+
+    .button-area button {
+        width: 100%;
+        padding: 11px 0;
+        font-size: 16px;
+    }
+
+    .button-area span {
+        margin: 20px 0 0;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    header {
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .hamburger {
+        display: block;
+    }
+
+    header nav {
+        position: absolute;
+        width: 100%;
+        left: -100%;
+        top: 70px;
+        width: 100%;
+        background: #2b2828;
+        padding: 30px;
+        transition: 0.3s;
+    }
+
+    header #nav_check:checked~nav {
+        left: 0;
+    }
+
+    header nav ul {
+        display: block;
+    }
+
+    header nav ul li a {
+        margin: 5px 0;
+    }
+}

@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+html, body, form {
+min-height: 100%;
+background: #105469 !important;
+}
+
+form h1, form h4 {
+    color: white;
+}
+
+form select option {
+    color: #363636;
+}
+
+body, div, form, input, select { 
+padding: 0;
+margin: 0;
+outline: none;
+font-family: "Ubuntu", Roboto, Arial, sans-serif;
+font-size: 16px;
+color: #eae9e9;
+line-height: 22px;
+}
+
+h1, h4 {
+margin: 15px 0 4px;
+font-weight: 400;
+}
+
+h4 {
+margin: 20px 0 4px;
+font-weight: 400;
+}
+
+.small {
+font-size: 10px;
+line-height: 18px;
+}
+
+.testbox {
+display: flex;
+justify-content: center;
+align-items: center;
+height: inherit;
+padding: 3px;
+}
+
+form {
+width: 100%;
+padding: 20px;
+background: #fff;
+/*box-shadow: 0 2px 5px #ffffff; */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+input {
+width: calc(100% - 10px);
+/*padding: 5px;*/
+border-radius: 3px;
+/*vertical-align: middle;*/
+}
+
+input:hover, textarea:hover, select:hover {
+outline: none;
+border: 1px solid #095484;
+background: #dad0d0;
+color: #363636;
+}
+
+.title-block select, .title-block input {
+margin-bottom: 10px;
+}
+
+select {
+padding: 7px 0;
+border-radius: 3px;
+border: 1px solid #000000;
+background: transparent;
+width: 55%;
+}
+
+option {
+background: #dedcdc;
+color: #363636;
+}
+
+input[type="submit"] {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%; */
+    color: #363636;
+    border-radius: 10px;
+}
+
+.btn-block {
+margin-top: 40px;
+height: 90px;
+text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+width: 100%;
+margin-bottom: 20px;
+}
+
+.btn-block * {
+    margin-top: 18px;
+    background: #dee6ee;
+    width: 60%;
+    height: 37px;
+    line-height: 36px;
+    color: #363636;
+    border-radius: 10px;
+}
+
+.btn-block a:hover {
+    background: #d6dde4;
+}
+
+button {
+width: 150px;
+padding: 10px;
+border: none;
+-webkit-border-radius: 5px; 
+-moz-border-radius: 5px; 
+border-radius: 5px; 
+background-color: #095484;
+font-size: 16px;
+color: #fff;
+cursor: pointer;
+}
+button:hover {
+background-color: #0666a3;
+}
+
+
+@media (min-width: 568px) {
+.title-block {
+display: flex;
+justify-content: space-between;
+}
+.title-block select {
+width: 30%;
+margin-bottom: 0;
+}
+.title-block input {
+width: 31%;
+margin-bottom: 0;
+}
+th, td {
+word-break: keep-all;
+}
+}
