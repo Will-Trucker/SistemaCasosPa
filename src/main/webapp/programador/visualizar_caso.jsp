@@ -46,13 +46,18 @@
         <div></div>
     </label>
 </header>
-<div class="contendor">
-    <div class="wrapper">
+<div class="contendor" style="height: 450px">
+    <div class="wrapper" style="height: 750px">
         <h1>Visualizacion del Caso</h1>
         <form action="#">
             <div class="dbl-field">
                 <div class="field">
                     <input type="text" name="case-name" placeholder="Nombre del Caso" readonly>
+                    <i class="fa-solid fa-file-lines"></i>
+                </div>
+                <br>
+                <div class="field">
+                    <input type="text" name="case-name" placeholder="Fecha limite" readonly>
                     <i class="fa-solid fa-file-lines"></i>
                 </div>
             </div>
@@ -65,13 +70,13 @@
                 <span></span>
             </div>
             <div class="button-area">
-                <button type="submit"><a href="caso_aceptar.jsp">Aceptar<a/></button>
+                <button type="submit"><a href="caso_aceptar.jsp">Llenar bitacora<a/></button>
                 <span></span>
                 <!-- <br><br><br><br><br><br><br><br> -->
                 <button type="submit"><a href="caso_rechazar.jsp">Rechazar<a/></button>
                 <span></span>
                 <!-- <br><br><br><br><br><br><br><br> -->
-                <button type="submit"><a href="jefe_de_desarrollo.jsp">Regresar<a/></button>
+                <button type="submit"><a href="programador.jsp">Regresar<a/></button>
                 <span></span>
                 <!-- <br><br><br><br><br><br> -->
             </div>

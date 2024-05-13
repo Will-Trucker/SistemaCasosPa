@@ -11,7 +11,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Programador</title>
     <link rel="stylesheet" href="../css/style.css" type="text/css" />
     <link rel="stylesheet" href="../css/table.css">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
@@ -29,7 +29,7 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="jefe_de_desarrollo.jsp" class="active">Home</a>
+                        <a href="programador.jsp" class="active">Home</a>
                     </li>
                     <li>
                         <a href="asignar_programador.jsp">Asignar Programador</a>
@@ -50,7 +50,7 @@
         </header>
         <section class="content-table">
             <div class="div-table">
-                <h2>Casos recibidos</h2>
+                <h2>Mis Casos Asignados</h2>
 
                 <!-- tabla de casos recibidos -->
                 <table>
@@ -83,7 +83,7 @@
             </div>
             <br>
             <div class="div-table">
-                <h2>Casos pendientes de revisión</h2>
+                <h2>Mis casos finalizados</h2>
                 <!-- tabla de casos recibidos -->
                 <table>
                     <thead>
