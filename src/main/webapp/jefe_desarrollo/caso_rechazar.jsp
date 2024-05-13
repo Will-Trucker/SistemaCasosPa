@@ -2,23 +2,23 @@
   Created by IntelliJ IDEA.
   User: willi
   Date: 4/30/2024
-  Time: 4:32 PM
+  Time: 4:33 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="dropzone/min/dropzone.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>👨🏾‍⚖️ Jefe Desarrollo | Rechazar Caso</title>
+    <link rel="stylesheet" href="../dropzone/min/dropzone.min.css">
+    <link rel="stylesheet" href="../css/caso_rechaza.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-B4dSgrCDPYrUGzXgz/M/VbLLS6">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://kit.fontawesome.com/8dd3c39186.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/acepta.css">
 </head>
 <body>
     <header>
@@ -27,10 +27,10 @@
         <nav>
             <ul>
                 <li>
-                    <a href="jefe_de_desarrollo.jsp" class="active">Home</a>
+                    <a href="jefe_de_desarrollo.jsp">Home</a>
                 </li>
                 <li>
-                    <a href="asignar_probador.jsp">Asignar Programador</a>
+                    <a href="asignar_programador.jsp">Asignar Programador</a>
                 </li>
                 <li>
                     <a href="asignar_probador.jsp">Asignar Probador</a>
@@ -48,7 +48,7 @@
     </header>
     <div class="contendor">
         <div class="wrapper">
-            <h1>Aceptacion de Caso</h1>
+            <h1>Rechazo de Caso</h1>
             <form action="#">
                 <div class="dbl-field">
                     <div class="field">
@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div class="message">
-                    <textarea placeholder="Motivo de Aceptacion" name="message"></textarea>
+                    <textarea placeholder="Motivo de Rechazo" name="message"></textarea>
                     <i class="fa-regular fa-newspaper"></i>
                 </div>
                 <div class="dbl-field">
@@ -127,7 +127,7 @@
         </div>
     </div>
 
-    <script src="dropzone/min/dropzone.min.js"></script>
+    <script src="../dropzone/min/dropzone.min.js"></script>
 
     <script>
         var dropzone = new Dropzone('#demo-upload', {

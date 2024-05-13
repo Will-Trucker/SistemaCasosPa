@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: willi
   Date: 4/30/2024
-  Time: 3:21 PM
+  Time: 3:14 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -10,10 +10,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin | Empleados</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/table.css">
-    <link rel="stylesheet" href="css/admin_empleado.css">
+    <title>Admin | Casos</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/table.css">
+    <link rel="stylesheet" href="../css/admin_empleado.css">
 </head>
 <body>
 <header>
@@ -28,16 +28,16 @@
                 <a href="admin_empleado.jsp">Empleados</a>
             </li>
             <li>
-                <a href="admin_jefeaf.jsp">Jefe Área Funcional</a>
+                <a href="admin_jefeaf.jsp">J. Área Funcional</a>
             </li>
             <li>
-                <a href="admin_jefe_desarrollo.jsp" class="active">Jefe Desarrollo</a>
+                <a href="admin_jefe_desarrollo.jsp">J. Desarrollo</a>
             </li>
             <li>
                 <a href="admin_programador.jsp">Programador</a>
             </li>
             <li>
-                <a href="admin_casos.jsp" >Casos</a>
+                <a href="admin_casos.jsp" class="active">Casos</a>
             </li>
             <li>
                 <button class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> SALIR</button>
@@ -50,40 +50,9 @@
         <div></div>
     </label>
 </header>
-
-<div class="">
-    <div class="">
-        <form action="" method="post">
-            <h1>Jefe de desarrollo</h1>
-
-            <fieldset>
-
-                <label for="id">ID:</label>
-                <input type="text" id="id" name="id">
-
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre_empleado">
-
-                <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido">
-
-                <label for="usuario">Usuario:</label>
-                <input type="text" id="usuario" name="usuario">
-
-                <label for="clave">Clave:</label>
-                <input type="text" id="clave" name="clave">
-
-                <button type="submit">Crear</button>
-
-            </fieldset>
-        </form>
-    </div>
-</div>
-
 <section class="content-table">
-
     <div class="div-table">
-        <h2>Jefes de desarrollo</h2>
+        <h2>Casos</h2>
 
         <!-- tabla de casos recibidos -->
         <table>
@@ -91,23 +60,36 @@
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Usuario</th>
-                <th>Clave</th>
+                <th>Descripcion</th>
+                <th>Estado</th>
+                <th>Porcentaje</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td>123</td>
-                <td>Chepe</td>
-                <td>ramirez</td>
-                <td>Chepito</td>
-                <td>Chepe123</td>
+                <td>caso 99</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis sapiente, expedita vitae consequuntur praesentium quam molestias dolore, neces</td>
+                <td>en espera</td>
+                <td>100%</td>
+            </tr>
+            <tr>
+                <td>123</td>
+                <td>caso 99</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis sapiente, expedita vitae consequuntur praesentium quam molestias dolore, neces</td>
+                <td>terminado</td>
+                <td>100%</td>
+            </tr>
+            <tr>
+                <td>123</td>
+                <td>caso 99</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis sapiente, expedita vitae consequuntur praesentium quam molestias dolore, neces</td>
+                <td>rechazado</td>
+                <td>0%</td>
             </tr>
             </tbody>
         </table>
         <!-- fin de table 1  -->
     </div>
-</section>
 </body>
 </html>

@@ -12,8 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../css/table.css">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-B4dSgrCDPYrUGzXgz/M/VbLLS6">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,7 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="" class="active">Home</a>
+                        <a href="jefe_de_desarrollo.jsp" class="active">Home</a>
                     </li>
                     <li>
                         <a href="asignar_programador.jsp">Asignar Programador</a>
@@ -107,13 +107,13 @@
                         <td>2</td>
                         <td>Zoe</td>
                         <td>Washburn</td>
-                        <td><button style="padding: 10px;"><i class="fa-solid fa-envelope-open"></i>Abrir</button></td>
+                        <td><button style="padding: 10px;" href="visualizar_caso.jsp"><i class="fa-solid fa-envelope-open"></i><a href="visualizar_caso.jsp">Abrir</a></button></td>
                     </tr>
                     </tbody>
                 </table>
                 <!-- fin de table 1  -->
             </div>
         </section>
-        <script src="js/app.js"></script>
+        <script src="../js/app.js"></script>
 </body>
 </html>

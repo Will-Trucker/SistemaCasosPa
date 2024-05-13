@@ -11,8 +11,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="dropzone/min/dropzone.min.css">
-    <link rel="stylesheet" href="css/visualizar_caso.css">
+    <link rel="stylesheet" href="../dropzone/min/dropzone.min.css">
+    <link rel="stylesheet" href="../css/visualizar_caso.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-B4dSgrCDPYrUGzXgz/M/VbLLS6">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://kit.fontawesome.com/8dd3c39186.js" crossorigin="anonymous"></script>
@@ -65,13 +65,13 @@
                 <span></span>
             </div>
             <div class="button-area">
-                <button type="submit">Aceptar</button>
+                <button type="submit"><a href="caso_aceptar.jsp.jsp">Aceptar<a/></button>
                 <span></span>
                 <!-- <br><br><br><br><br><br><br><br> -->
-                <button type="submit">Rechazar</button>
+                <button type="submit"><a href="caso_rechazar.jsp.jsp">Rechazar<a/></button>
                 <span></span>
                 <!-- <br><br><br><br><br><br><br><br> -->
-                <button type="submit">Regresar</button>
+                <button type="submit"><a href="jefe_de_desarrollo.jsp">Regresar<a/></button>
                 <span></span>
                 <!-- <br><br><br><br><br><br> -->
             </div>
