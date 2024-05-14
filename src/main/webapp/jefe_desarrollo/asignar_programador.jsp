@@ -1,3 +1,7 @@
+<%@ page import="sv.edu.udb.sistemacasospa.Empleado.Empleado" %>
+<%@ page import="sv.edu.udb.sistemacasospa.Caso.Caso" %>
+<%@ page import="java.util.List" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: willi
@@ -42,35 +46,37 @@
     </header>
 
     <div class="testbox">
-        <form action="" method="POST">
-            <h1>Asignar un Caso a un Programador</h1>
+        <form action="AsignarProgramadorServlet" method="POST">
 
-            <h4>Casos: </h4>
+            <h4>Empleados disponibles</h4>
+            <select name="elegir_empleado">
+                <%
+                    List<Empleado> empleados = (List<Empleado>) request.getAttribute("empleados");
+                    if (empleados != null) {
+                        for (Empleado empleado : empleados) {
+                %>
+                <option value="<%= empleado.getId() %>"><%= empleado.getNombre() %> <%= empleado.getApellido() %></option>
+                <%
+                        }
+                    }
+                %>
+            </select>
+
+            <h4>Casos</h4>
             <select name="elegir_caso">
-                <option value="1">Caso 99 - mejorar el estilo</option>
-                <option value="2">Caso 100 - mejorar la base de datos</option>
-                <option value="3">Caso 101 - instalar dependencias</option>
-                <option value="4">Caso 102 - publicar proyecto</option>
+                <%
+                    List<Caso> casos = (List<Caso>) request.getAttribute("casos");
+                    if (casos != null) {
+                        for (Caso caso : casos) {
+                %>
+                <option value="<%= caso.getId() %>"><%= caso.getNombreCaso() %></option>
+                <%
+                        }
+                    }
+                %>
             </select>
 
-            <h4>Programadores disponlibles</h4>
-            <select name="elegir_programador">
-                <option value="1">programador abc</option>
-                <option value="2">www</option>
-                <option value="3">xyz</option>
-            </select>
-
-            <h4>Asignar estado del caso</h4>
-            <select name="elegir_estado_caso">
-                <option value="1">En espera</option>
-                <option value="2">Aceptado</option>
-                <option value="3">Rechazado</option>
-            </select>
-
-            <div class="btn-block">
-                <input type="submit" name="asignarProgramador" value="Asignar Programador">
-                <a href="..">Regresar</a>
-            </div>
+        <input type="submit" value="Asignar">
         </form>
     </div>
 </body>

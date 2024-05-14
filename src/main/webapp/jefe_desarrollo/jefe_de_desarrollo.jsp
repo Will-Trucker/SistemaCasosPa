@@ -35,7 +35,7 @@
                 <a href="jefe_de_desarrollo.jsp" class="active">Home</a>
             </li>
             <li>
-                <a href="asignar_programador.jsp">Asignar Programador</a>
+                <a href="../AsignarProgramadorServlet">Asignar Programador</a>
             </li>
             <li>
                 <a href="asignar_probador.jsp">Asignar Probador</a>
