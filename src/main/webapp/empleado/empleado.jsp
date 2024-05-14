@@ -82,37 +82,7 @@
                 <!-- fin de table 1  -->
             </div>
             <br>
-            <div class="div-table">
-                <h2>Mis casos finalizados</h2>
-                <!-- tabla de casos recibidos -->
-                <table>
-                    <thead>
-                    <tr>
-                        <th>ID
-                        <th>Nombre del caso
-                        <th>Descripcion
-                        <th>Abrir caso
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>123</td>
-                        <td>caso 99 en hd</td>
-                        <td> Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, beatae ipsam ducimus
-                            reiciendis ut voluptatum, maxime sapiente obcaecati, aliquam a aperiam inventore dolor ab ipsa
-                            rem sint rerum voluptates assumenda.</td>
-                        <td>
-                            <button style="padding: 10px;"><i class="fa-solid fa-envelope-open"></i><a href="visualizar_caso.jsp">Abrir</a></button>
-                        </td>
-                    <tr>
-                        <td>2</td>
-                        <td>Zoe</td>
-                        <td>Washburn</td>
-                        <td><button style="padding: 10px;" href="visualizar_caso.jsp"><i class="fa-solid fa-envelope-open"></i><a href="visualizar_caso.jsp">Abrir</a></button></td>
-                    </tr>
-                    </tbody>
-                </table>
-                <!-- fin de table 1  -->
-            </div>
+
         </section>
         <script src="../js/app.js"></script>
 </body>
