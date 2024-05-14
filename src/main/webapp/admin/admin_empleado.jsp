@@ -6,6 +6,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ page import="sv.edu.udb.sistemacasospa.Empleado.Empleado" %>
+<%@ page import="sv.edu.udb.sistemacasospa.Empleado.EmpleadosServlet" %>
+<%@ page import="sv.edu.udb.sistemacasospa.Empleado.EmpleadosFuncion" %>
+<%@ page import="sv.edu.udb.sistemacasospa.Departamento.Departamento" %>
+<%@ page import="sv.edu.udb.sistemacasospa.Departamento.DepartamentosFuncion" %>
+<%@ page import="sv.edu.udb.sistemacasospa.Cargo.CargosFuncion" %>
+<%@ page import="sv.edu.udb.sistemacasospa.Cargo.Cargo" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -53,44 +61,47 @@
 
 <div class="">
     <div class="">
-        <form action="" method="post">
+        <form action="../EmpleadosServlet" method="post">
             <h1>Empleado</h1>
 
             <fieldset>
-
-                <label for="id">ID:</label>
-                <input type="text" id="id" name="id">
-
                 <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre_empleado">
+                <input type="text" id="nombre" name="Nombre">
 
                 <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido">
+                <input type="text" id="apellido" name="Apellido">
 
                 <label for="usuario">Usuario:</label>
-                <input type="text" id="usuario" name="usuario">
+                <input type="text" id="usuario" name="NombreUsuario">
 
                 <label for="clave">Clave:</label>
-                <input type="text" id="clave" name="clave">
+                <input type="text" id="clave" name="Contrasenia">
 
                 <label for="departamento">Departamento:</label>
-                <select id="departamento" name="departamentos">
-                    <option value="frontend_developer">Front-End Developer</option>
-                    <option value="php_developer">PHP Developer</option>
-                    <option value="python_developer">Python Developer</option>
-                    <option value="rails_developer">Rails Developer</option>
-                    <option value="web_designer">Web Designer</option>
-                    <option value="wordpress_developer">Wordpress Developer</option>
+                <select id="departamento" name="idDepartamentoPerteneciente">
+                    <%
+                        DepartamentosFuncion departamento = new DepartamentosFuncion();
+                        List<Departamento> departamentos = departamento.obtenerDepartamentos();
+                        for (Departamento departamento1 : departamentos) {
+                    %>
+                    <option value="<%= departamento1.getId() %>"><%= departamento1.getId() %> - <%= departamento1.getNombreDepartamento() %></option>
+                    <%
+                        }
+                    %>
                 </select>
 
                 <label for="cargo">Cargo:</label>
-                <select id="cargo" name="cargos">
-                    <option value="frontend_developer">Front-End Developer</option>
-                    <option value="php_developer">PHP Developer</option>
-                    <option value="python_developer">Python Developer</option>
-                    <option value="rails_developer">Rails Developer</option>
-                    <option value="web_designer">Web Designer</option>
-                    <option value="wordpress_developer">Wordpress Developer</option>
+                <select id="cargo" name="idCargo">
+                    <%
+                        CargosFuncion cargo = new CargosFuncion();
+                        List<Cargo> cargos = cargo.obtenerCargos();
+                        for (Cargo cargo1 : cargos) {
+                    %>
+                    <option value="<%= cargo1.getId() %>"><%= cargo1.getId()%> - <%= cargo1.getCargo() %></option>
+                     <%
+                         }
+                     %>
+
                 </select>
 
                 <button type="submit">Crear</button>
@@ -120,41 +131,8 @@
             </thead>
             <tbody>
             <tr>
-                <td>123</td>
-                <td>Chepe</td>
-                <td>ramirez</td>
-                <td>Chepito</td>
-                <td>Chepe123</td>
-                <td>Ventas</td>
-                <td>Empleado</td>
             </tr>
-            <tr>
-                <td>234</td>
-                <td>Chapa</td>
-                <td>ramira</td>
-                <td>Chepita</td>
-                <td>Chepa123</td>
-                <td>Ventas</td>
-                <td>Empleado</td>
-            </tr>
-            <tr>
-                <td>234</td>
-                <td>Chapa</td>
-                <td>ramira</td>
-                <td>Chepita</td>
-                <td>Chepa123</td>
-                <td>Ventas</td>
-                <td>Empleado</td>
-            </tr>
-            <tr>
-                <td>234</td>
-                <td>Chapa</td>
-                <td>ramira</td>
-                <td>Chepita</td>
-                <td>Chepa123</td>
-                <td>Ventas</td>
-                <td>Empleado</td>
-            </tr>
+
             </tbody>
         </table>
         <!-- fin de table 1  -->

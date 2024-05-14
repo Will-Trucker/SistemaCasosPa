@@ -5,28 +5,33 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import sv.edu.udb.sistemacasospa.Departamento.Departamento;
+import sv.edu.udb.sistemacasospa.Departamento.DepartamentosFuncion;
+
 import java.io.IOException;
 import java.util.List;
 
 import java.io.IOException;
 
+
 @WebServlet(name = "EmpleadosServlet", urlPatterns = {"/EmpleadosServlet"})
 public class EmpleadosServlet extends HttpServlet {
     private final EmpleadosFuncion empleadosFuncion = new EmpleadosFuncion();
+    private final DepartamentosFuncion departamentosFuncion = new DepartamentosFuncion();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Empleado> empleados = empleadosFuncion.obtenerEmpleados();
         request.setAttribute("empleados", empleados);
-        request.getRequestDispatcher("empleados.jsp").forward(request, response);
+        request.getRequestDispatcher("../admin/admin_empleado.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String nombre = request.getParameter("nombre");
-        String apellido = request.getParameter("apellido");
-        String nombreUsuario = request.getParameter("nombreUsuario");
-        String contrasenia = request.getParameter("contrasenia");
+        String nombre = request.getParameter("Nombre");
+        String apellido = request.getParameter("Apellido");
+        String nombreUsuario = request.getParameter("NombreUsuario");
+        String contrasenia = request.getParameter("Contrasenia");
         int idDepartamentoPerteneciente = Integer.parseInt(request.getParameter("idDepartamentoPerteneciente"));
         int idCargo = Integer.parseInt(request.getParameter("idCargo"));
 
@@ -40,6 +45,6 @@ public class EmpleadosServlet extends HttpServlet {
 
         empleadosFuncion.agregarEmpleado(empleado);
 
-        response.sendRedirect("EmpleadosServlet");
+        response.sendRedirect("../admin/admin_empleado.jsp");
     }
 }

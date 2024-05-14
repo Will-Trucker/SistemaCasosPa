@@ -1,5 +1,7 @@
 package sv.edu.udb.sistemacasospa.Empleado;
 
+
+
 public class Empleado {
     private int id;
     private String nombre;
@@ -12,7 +14,7 @@ public class Empleado {
     public Empleado() {
     }
 
-    public Empleado(int id, String nombre, String apellido, String nombreUsuario, String contrasenia, int idDepartamentoPerteneciente, int idCargo) {
+    public Empleado(int id,String nombre, String apellido, String nombreUsuario, String contrasenia, int idDepartamentoPerteneciente, int idCargo) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;

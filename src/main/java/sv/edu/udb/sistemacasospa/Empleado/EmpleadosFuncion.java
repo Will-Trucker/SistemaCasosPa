@@ -19,7 +19,7 @@ public class EmpleadosFuncion {
 
     public List<Empleado> obtenerEmpleados() {
         List<Empleado> empleados = new ArrayList<>();
-        String query = "SELECT * FROM empleados";
+        String query = "SELECT e.*, d.Nombre AS NombreDepartamento, c.Nombre AS NombreCargo " + "FROM empleados e " + "INNER JOIN departamentos d ON e.IdDepartamentoPerteneciente = d.Id " + "INNER JOIN cargos c ON e.IdCargo = c.Id";
 
         try {
             PreparedStatement statement = connection.prepareStatement(query);
@@ -32,8 +32,8 @@ public class EmpleadosFuncion {
                 empleado.setApellido(resultSet.getString("Apellido"));
                 empleado.setNombreUsuario(resultSet.getString("NombreUsuario"));
                 empleado.setContrasenia(resultSet.getString("Contrasenia"));
-                empleado.setIdDepartamentoPerteneciente(resultSet.getInt("IdDepartamentoPerteneciente"));
-                empleado.setIdCargo(resultSet.getInt("IdCargo"));
+                empleado.setIdDepartamentoPerteneciente(Integer.parseInt(resultSet.getString("IdDepartamentoPerteneciente")));
+                empleado.setIdCargo(Integer.parseInt(resultSet.getString("idCargo")));
                 empleados.add(empleado);
             }
         } catch (SQLException e) {
@@ -71,7 +71,6 @@ public class EmpleadosFuncion {
             statement.setString(4, empleado.getContrasenia());
             statement.setInt(5, empleado.getIdDepartamentoPerteneciente());
             statement.setInt(6, empleado.getIdCargo());
-            statement.setInt(7, empleado.getId());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

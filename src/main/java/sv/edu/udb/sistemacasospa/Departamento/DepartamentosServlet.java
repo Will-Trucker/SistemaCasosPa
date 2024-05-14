@@ -38,7 +38,7 @@ public class DepartamentosServlet extends HttpServlet {
         departamentoFuncion.agregarDepartamento(nuevoDepartamento);
 
         // Redirigir de vuelta a la página JSP
-        response.sendRedirect("nombre_de_tu_pagina.jsp");
+        response.sendRedirect("/admin/admin_department.jsp");
     }
 
 }
