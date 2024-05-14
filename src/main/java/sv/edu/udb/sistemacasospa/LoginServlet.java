@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
                         break;
                     // Agrega más casos según tus necesidades
                     default:
-                        redirectURL = "error.jsp";
+                        redirectURL = "login.jsp";
                         break;
                 }
                 response.sendRedirect(redirectURL);
