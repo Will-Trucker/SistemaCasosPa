@@ -14,13 +14,6 @@ public class conexion {
                 // Cambiado el nombre del driver
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
-                String url = "jdbc:mysql://localhost:3306/sistema_casos";
-                String user = "root";
-                String password = "";
-
-
-                Class.forName("com.mysql.cj.jdbc.Driver");
-
                 String url = "jdbc:mysql://localhost:3306/sistema_caso";
                 String user = "root";
                 String password = "";

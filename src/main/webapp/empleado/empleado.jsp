@@ -1,9 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="sv.edu.udb.sistemacasospa.Caso.Caso" %>
 <%@ page import="sv.edu.udb.sistemacasospa.Caso.Caso_funcion" %>
-
-<%@ page import="java.util.List" %>
-
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: willi
@@ -84,6 +81,7 @@
                                 <a href="visualizar_caso.jsp?id=<%= caso.getId() %>">Abrir</a>
                             </button>
                         </td>
+
                     </tr>
                     <%
                         }
