@@ -1,20 +1,22 @@
 <%--
-  Created by IntelliJ IDEA.
-  User: willi
-  Date: 4/30/2024
-  Time: 4:35 PM
-  To change this template use File | Settings | File Templates.
+    Created by IntelliJ IDEA.
+    User: willi
+    Date: 4/30/2024
+    Time: 4:35 PM
+    To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="sv.edu.udb.sistemacasospa.Caso.Caso" %>
+<%@ page import="sv.edu.udb.sistemacasospa.Caso.Caso_funcion" %>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../dropzone/min/dropzone.min.css">
+    <title>Visualización del Caso</title>
     <link rel="stylesheet" href="../css/visualizar_caso.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-B4dSgrCDPYrUGzXgz/M/VbLLS6">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../css/style.css">
     <script src="https://kit.fontawesome.com/8dd3c39186.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,18 +24,12 @@
 </head>
 <body>
 <header>
-    <div class="logo">ACME INC.</div>
+    <div class="logo">Gestion</div>
     <input type="checkbox" id="nav_check" hidden>
     <nav>
         <ul>
             <li>
-                <a href="jefe_de_desarrollo.jsp" class="active">Home</a>
-            </li>
-            <li>
-                <a href="asignar_programador.jsp">Asignar Programador</a>
-            </li>
-            <li>
-                <a href="asignar_probador.jsp">Asignar Probador</a>
+                <a href="jefe_af.jsp">Home</a>
             </li>
             <li>
                 <button class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> SALIR</button>
@@ -46,42 +42,46 @@
         <div></div>
     </label>
 </header>
-<div class="contendor" style="height: 450px">
-    <div class="wrapper" style="height: 750px">
-        <h1>Visualizacion del Caso</h1>
+<div class="contendor">
+    <div class="wrapper">
+        <h1>Visualización del Caso</h1>
+        <%
+
+            String casoId = request.getParameter("id");
+            if (casoId != null) {
+                int id = Integer.parseInt(casoId);
+                Caso_funcion casosFuncion = new Caso_funcion();
+                Caso caso = casosFuncion.obtenerCasoPorId(id);
+                if (caso != null) {
+        %>
         <form action="#">
             <div class="dbl-field">
                 <div class="field">
-                    <input type="text" name="case-name" placeholder="Nombre del Caso" readonly>
-                    <i class="fa-solid fa-file-lines"></i>
-                </div>
-                <br>
-                <div class="field">
-                    <input type="text" name="case-name" placeholder="Descripcion del caso" readonly>
+                    <input type="text" name="case-name" placeholder="Nombre del Caso" value="<%= caso.getNombreCaso() %>" readonly>
                     <i class="fa-solid fa-file-lines"></i>
                 </div>
             </div>
             <div class="message">
-                <textarea placeholder="Bitacora" name="message" readonly></textarea>
+                <textarea placeholder="Descripción del Caso" name="message" readonly><%= caso.getDescripcionCaso() %></textarea>
                 <i class="fa-regular fa-newspaper"></i>
             </div>
             <div class="button-pdf">
                 <button type=""><i class="fa-solid fa-file-pdf"></i>Descargar PDF</button>
                 <span></span>
             </div>
-            <div class="button-area">
-                <button type="submit"><a href="empleado.jsp">Aceptar<a/></button>
-                <span></span>
-                <!-- <br><br><br><br><br><br><br><br> -->
-                <button type="submit"><a href="caso_rechazar.jsp">Rechazar<a/></button>
-                <span></span>
-                <!-- <br><br><br><br><br><br><br><br> -->
-                <button type="submit"><a href="empleado.jsp">Regresar<a/></button>
-                <span></span>
-                <!-- <br><br><br><br><br><br> -->
-            </div>
-
         </form>
+        <%
+        } else {
+        %>
+        <p>No se encontró el caso especificado.</p>
+        <%
+            }
+        } else {
+        %>
+        <p>No se especificó ningún caso.</p>
+        <%
+            }
+        %>
     </div>
 </div>
 </body>

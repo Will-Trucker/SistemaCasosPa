@@ -68,8 +68,7 @@
                     <%
                         Caso_funcion casoFuncion = new Caso_funcion();
                         List<Caso> casosRecibidos = casoFuncion.obtenerCasosRecibidos();
-                        if (casosRecibidos != null && !casosRecibidos.isEmpty()) {
-                            for (Caso caso : casosRecibidos) {
+                        for (Caso caso : casosRecibidos) {
                     %>
                     <tr>
                         <td><%= caso.getId() %></td>
@@ -83,16 +82,7 @@
                         </td>
 
                     </tr>
-                    <%
-                        }
-                    } else {
-                    %>
-                    <tr>
-                        <td colspan="4">No cases assigned.</td>
-                    </tr>
-                    <%
-                        }
-                    %>
+                    <% } %>
                     </tbody>
                 </table>
                 <!-- fin de table 1  -->
