@@ -1,4 +1,10 @@
-<%--
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="sv.edu.udb.sistemacasospa.Caso.Caso" %>
+<%@ page import="sv.edu.udb.sistemacasospa.Caso.Caso_funcion" %>
+
+<%@ page import="java.util.List" %>
+
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: willi
   Date: 4/30/2024
@@ -62,21 +68,33 @@
                         <th>Abrir caso</th>
                     </thead>
                     <tbody>
+                    <%
+                        Caso_funcion casoFuncion = new Caso_funcion();
+                        List<Caso> casosRecibidos = casoFuncion.obtenerCasosRecibidos();
+                        if (casosRecibidos != null && !casosRecibidos.isEmpty()) {
+                            for (Caso caso : casosRecibidos) {
+                    %>
                     <tr>
-                        <td>123</td>
-                        <td>caso 99 en hd</td>
-                        <td> Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, beatae ipsam ducimus
-                            reiciendis ut voluptatum, maxime sapiente obcaecati, aliquam a aperiam inventore dolor ab ipsa
-                            rem sint rerum voluptates assumenda.</td>
+                        <td><%= caso.getId() %></td>
+                        <td><%= caso.getNombreCaso() %></td>
+                        <td><%= caso.getDescripcionCaso() %></td>
                         <td>
-                            <button style="padding: 10px;"><i class="fa-solid fa-envelope-open"></i><a href="visualizar_caso.jsp">Abrir</a></button>
+                            <button style="padding: 10px;">
+                                <i class="fa-solid fa-envelope-open"></i>
+                                <a href="visualizar_caso.jsp?id=<%= caso.getId() %>">Abrir</a>
+                            </button>
                         </td>
-                    <tr>
-                        <td>2</td>
-                        <td>Zoe</td>
-                        <td>Washburn</td>
-                        <td><button style="padding: 10px;"><i class="fa-solid fa-envelope-open"></i><a href="visualizar_caso.jsp">Abrir</a></button></td>
                     </tr>
+                    <%
+                        }
+                    } else {
+                    %>
+                    <tr>
+                        <td colspan="4">No cases assigned.</td>
+                    </tr>
+                    <%
+                        }
+                    %>
                     </tbody>
                 </table>
                 <!-- fin de table 1  -->
