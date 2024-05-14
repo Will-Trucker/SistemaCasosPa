@@ -75,7 +75,7 @@
                         <td>
                             <button style="padding: 10px;">
                                 <i class="fa-solid fa-envelope-open"></i>
-                                <a href="<%= caso.getId() %>">Abrir</a>
+                                <a href="visualizar_caso.jsp?id=<%= caso.getId() %>">Abrir</a>
                             </button>
                         </td>
                     </tr>
