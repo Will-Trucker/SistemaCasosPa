@@ -27,7 +27,7 @@
     <nav>
         <ul>
             <li>
-                <a href="">Departamentos</a>
+                <a href="admin_department.jsp">Departamentos</a>
             </li>
             <li>
                 <a href="admin_empleado.jsp">Empleados</a>

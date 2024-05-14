@@ -51,31 +51,5 @@ public class DepartamentosFuncion {
             e.printStackTrace();
         }
     }
-
-    public void actualizarDepartamento(Departamento departamento) {
-        String query = "UPDATE departamentos SET NombreDepartamento=?, Seccion=? WHERE Id=?";
-
-        try {
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1, departamento.getNombreDepartamento());
-            statement.setString(2, departamento.getSeccion());
-            statement.setInt(3, departamento.getId());
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void eliminarDepartamento(int idDepartamento) {
-        String query = "DELETE FROM departamentos WHERE Id=?";
-
-        try {
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setInt(1, idDepartamento);
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 }
 

@@ -171,6 +171,51 @@ form .button-area {
 
 
 
+table {
+    background: #012B39;
+    border-radius: 0.25em;
+    border-collapse: collapse;
+    margin: 1em;
+}
+th {
+    border-bottom: 1px solid #364043;
+    color: #E2B842;
+    font-size: 0.85em;
+    font-weight: 600;
+    padding: 0.5em 1em;
+    text-align: left;
+}
+td {
+    color: #fff;
+    font-weight: 400;
+    padding: 0.65em 1em;
+}
+.disabled td {
+    color: #4F5F64;
+}
+
+tbody tr:hover {
+    background: #014055;
+}
+
+button {
+    color: white;
+    background-color: black;
+    width: 90px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.content-table {
+    min-height: 655px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
 @media (max-width: 600px) {
     .wrapper h1 {
         text-align: center;

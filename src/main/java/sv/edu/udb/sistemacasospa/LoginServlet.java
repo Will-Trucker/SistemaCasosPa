@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect(redirectURL);
             } else {
                 // Las credenciales son incorrectas, redirigir a una página de error o volver al formulario de inicio de sesión
-                response.sendRedirect("error.jsp");
+                response.sendRedirect("login.jsp");
             }
 
             // Cerrar recursos
@@ -68,7 +68,7 @@ public class LoginServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
             // Manejar la excepción adecuadamente, redirigir a una página de error o mostrar un mensaje al usuario
-            response.sendRedirect("error.jsp");
+            response.sendRedirect("login.jsp");
         }
     }
 }

@@ -6,6 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ page import="sv.edu.udb.sistemacasospa.Departamento.Departamento" %>
+<%@ page import="sv.edu.udb.sistemacasospa.Departamento.DepartamentosServlet" %>
+<%@ page import="sv.edu.udb.sistemacasospa.Departamento.DepartamentosFuncion" %>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -18,6 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/table.css" type="text/css">
   <link rel="stylesheet" href="../css/admin_department.css" type="text/css">
 </head>
 <body>
@@ -58,15 +63,18 @@
 <div class="contendor">
   <div class="wrapper">
     <h1>Departamentos</h1>
-    <form action="#">
+    <form action="../DepartamentosServlet" method="POST">
       <div class="dbl-field">
         <div class="field">
-          <input type="text" name="case-name" placeholder="Departamento">
+          <input type="hidden" name="action" value="insertar">
+          <input type="text" name="NombreDepartamento" placeholder="Departamento" id="NombreDepartamento">
           <i class="fa-solid fa-building"></i>
         </div>
       </div>
       <div class="message">
-        <textarea placeholder="Descripcion" name="seccion"></textarea>
+        <textarea placeholder="seccion" name="Seccion" id="Seccion">
+
+        </textarea>
         <i class="fa-solid fa-note-sticky"></i>
       </div>
       <div class="button-area">
@@ -76,5 +84,38 @@
     </form>
   </div>
 </div>
+
+
+<section class="content-table">
+
+  <div class="div-table">
+    <h2>Empleados</h2>
+
+    <!-- tabla de casos recibidos -->
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre Departamento</th>
+        <th>Seccion</th>
+      </tr>
+      </thead>
+      <tbody>
+      <%
+        DepartamentosFuncion departamento = new DepartamentosFuncion();
+        List<Departamento> departamentos = departamento.obtenerDepartamentos();
+        for (Departamento departamento1 : departamentos) {
+      %>
+      <tr>
+        <td><%= departamento1.getId() %></td>
+        <td><%= departamento1.getNombreDepartamento() %></td>
+        <td><%= departamento1.getSeccion() %></td>
+      </tr>
+      <% } %>
+      </tbody>
+    </table>
+    <!-- fin de table 1  -->
+  </div>
+</section>
 </body>
 </html>

@@ -19,21 +19,27 @@ public class DepartamentosServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Departamento> departamentos = departamentosFuncion.obtenerDepartamentos();
         request.setAttribute("departamentos", departamentos);
-        request.getRequestDispatcher("departamentos.jsp").forward(request, response);
+        request.getRequestDispatcher("/admin/admin_department.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String nombreDepartamento = request.getParameter("nombreDepartamento");
-        String seccion = request.getParameter("seccion");
+        // Obtener los parámetros del formulario JSP
+        String nombreDepartamento = request.getParameter("NombreDepartamento");
+        String seccion = request.getParameter("Seccion");
 
-        Departamento departamento = new Departamento();
-        departamento.setNombreDepartamento(nombreDepartamento);
-        departamento.setSeccion(seccion);
+        // Crear un nuevo objeto Departamento
+        Departamento nuevoDepartamento = new Departamento();
+        nuevoDepartamento.setNombreDepartamento(nombreDepartamento);
+        nuevoDepartamento.setSeccion(seccion);
 
-        departamentosFuncion.agregarDepartamento(departamento);
+        // Llamar al método para agregar un departamento
+        DepartamentosFuncion departamentoFuncion = new DepartamentosFuncion();
+        departamentoFuncion.agregarDepartamento(nuevoDepartamento);
 
-        response.sendRedirect("DepartamentosServlet");
+        // Redirigir de vuelta a la página JSP
+        response.sendRedirect("nombre_de_tu_pagina.jsp");
     }
+
 }
 
