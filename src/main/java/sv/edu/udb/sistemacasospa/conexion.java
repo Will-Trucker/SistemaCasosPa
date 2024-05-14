@@ -10,6 +10,7 @@ public class conexion {
     public static Connection getConnection() {
         if (con == null) {
             try {
+
                 // Cambiado el nombre del driver
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -17,6 +18,13 @@ public class conexion {
                 String user = "root";
                 String password = "";
 
+
+                Class.forName("com.mysql.cj.jdbc.Driver");
+
+                String url = "jdbc:mysql://localhost:3306/sistema_caso";
+                String user = "root";
+                String password = "";
+                
                 con = DriverManager.getConnection(url, user, password);
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
