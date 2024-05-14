@@ -6,6 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ page import="sv.edu.udb.sistemacasospa.Caso.Caso" %>
+<%@ page import="sv.edu.udb.sistemacasospa.Caso.CasoServlet" %>
+<%@ page import="sv.edu.udb.sistemacasospa.Caso.Caso_funcion" %>
 <html>
 <head>
     <meta charset="UTF-8" />
@@ -54,61 +58,35 @@
                     <tr>
                         <th>ID</th>
                         <th>Nombre del caso</th>
-                        <th>Descripcion</th>
-                        <th>Porcentaje</th>
+                        <th>Descripción</th>
                         <th>Abrir caso</th>
+                    </tr>
                     </thead>
                     <tbody>
+                    <%
+                        Caso_funcion casoFuncion = new Caso_funcion();
+                        List<Caso> casosRecibidos = casoFuncion.obtenerCasosRecibidos();
+                        for (Caso caso : casosRecibidos) {
+                    %>
                     <tr>
-                        <td>123</td>
-                        <td>caso 99 en hd</td>
-                        <td> Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, beatae ipsam ducimus
-                            reiciendis ut voluptatum, maxime sapiente obcaecati, aliquam a aperiam inventore dolor ab ipsa
-                            rem sint rerum voluptates assumenda.
-                        </td>
+                        <td><%= caso.getId() %></td>
+                        <td><%= caso.getNombreCaso() %></td>
+                        <td><%= caso.getDescripcionCaso() %></td>
                         <td>
-                            10.%
-                        </td>
-                        <td>
-                            <button style="padding: 10px;"><i class="fa-solid fa-envelope-open"></i><a href="visualizar_caso.jsp">Abrir</a></button>
+                            <button style="padding: 10px;">
+                                <i class="fa-solid fa-envelope-open"></i>
+                                <a href="<%= caso.getId() %>">Abrir</a>
+                            </button>
                         </td>
                     </tr>
-
+                    <% } %>
                     </tbody>
                 </table>
-                <!-- fin de table 1  -->
-            </div>
-            <br>
-            <div class="div-table">
-                <h2>Casos Terminados</h2>
-                <!-- tabla de casos recibidos -->
-                <table>
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre del caso</th>
-                        <th>Descripcion</th>
-                        <th>Abrir caso</th>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>123</td>
-                        <td>caso 99 en hd</td>
-                        <td> Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, beatae ipsam ducimus
-                            reiciendis ut voluptatum, maxime sapiente obcaecati, aliquam a aperiam inventore dolor ab ipsa
-                            rem sint rerum voluptates assumenda.</td>
-                        <td>
-                            <button style="padding: 10px;"><i class="fa-solid fa-envelope-open"></i><a href="visualizar_caso.jsp">Abrir</a></button>
-                        </td>
-                    </tr>
 
-                    </tbody>
-                </table>
-                <!-- fin de table 1  -->
             </div>
 
             <div class="button-area">
-                <button type="submit" style="width: 200px; height: 50px"><a href="crear_caso.jsp">Crear Caso<a/></button>
+                <button type="submit" style="width: 200px; height: 50px"><a href="crear_caso.jsp">Crear Caso</a></button>
                 <span></span>
                 <!-- <br><br><br><br><br><br> -->
             </div>

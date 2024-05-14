@@ -92,4 +92,31 @@ public class Caso_funcion {
             e.printStackTrace();
         }
     }
+    public Caso obtenerCasoPorId(int idCaso) {
+        Caso caso = null;
+        String query = "SELECT * FROM caso WHERE Id = ?";
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, idCaso);
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                caso = new Caso();
+                caso.setId(resultSet.getInt("Id"));
+                caso.setNombreCaso(resultSet.getString("NombreCaso"));
+                caso.setDescripcionCaso(resultSet.getString("DescripcionCaso"));
+                caso.setIdDepartamentoAsignado(resultSet.getInt("IdDepartamentoAsignado"));
+                caso.setIdProgramadorAsignado(resultSet.getInt("IdProgramadorAsignado"));
+                caso.setIdEmpleadoFuncionalAsignado(resultSet.getInt("IdEmpleadoFuncionalAsignado"));
+                caso.setFechaInicio(resultSet.getString("FechaInicio"));
+                caso.setFechaFinal(resultSet.getString("FechaFinal"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return caso;
+    }
+
 }
