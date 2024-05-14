@@ -85,11 +85,6 @@
 
     </div>
 
-    <div class="button-area">
-        <button type="submit" style="width: 200px; height: 50px"><a href="crear_caso.jsp">Crear Caso</a></button>
-        <span></span>
-        <!-- <br><br><br><br><br><br> -->
-    </div>
 
 </section>
 <script src="../js/app.js"></script>
